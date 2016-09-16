@@ -1,0 +1,89 @@
+﻿<Page
+    x:Class="OptiSearch.Views.CamView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OptiSearch.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style x:Key="HighlightedWordBox" TargetType="Border">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+        <Style x:Key="ExtractedWordTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="FoundWordTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Yellow"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="HighlightedWordBoxHorizontalLine" TargetType="Border" BasedOn="{StaticResource HighlightedWordBox}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="Blue" Opacity="0.5" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="HighlightedWordBoxVerticalLine" TargetType="Border" BasedOn="{StaticResource HighlightedWordBox}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="Red" Opacity="0.5" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+     
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <CaptureElement Name="PreviewControl" Stretch="Uniform"/>
+            <Grid x:Name="Image" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image x:Name="PreviewImage"  HorizontalAlignment="Left" VerticalAlignment="Top" SizeChanged="PreviewImage_SizeChanged"/>
+                <Grid x:Name="TextOverlay" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Grid x:Name="TextOverlay2" HorizontalAlignment="Left" VerticalAlignment="Top"/> <!--For showing found words in search-->
+            </Grid>
+        </Grid>
+        <RelativePanel Margin="10">
+            <Button
+               Foreground="White"
+               Margin="0 0 10 0"
+               Name="RetakeButton"
+               Click="RetakeButton_Click">
+
+                <Viewbox MaxHeight="25" MaxWidth="25">
+                    <SymbolIcon Symbol="Refresh"/>
+                </Viewbox>
+            </Button>
+            <TextBox Name="SearchText"
+                     Margin="0"
+                     Height="38"
+                     TextChanged="SearchText_TextChanged"       
+                     FontSize="18"
+                     TextWrapping="Wrap"
+                      AcceptsReturn="False"
+                      Width="200"
+                      RelativePanel.RightOf="RetakeButton"
+                       />
+        </RelativePanel>
+
+        <Button Name="ExtractButton"
+                Margin="0 0 0 10"
+                Foreground="White"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Tapped="ExtractButton_Tapped">
+            <Viewbox MaxHeight="40" MaxWidth="40">
+                <SymbolIcon Symbol="Camera"/>
+            </Viewbox>
+        </Button>
+
+    </Grid>
+</Page>

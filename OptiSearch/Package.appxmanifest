@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="62814AalokSingh.OptiSearch" Publisher="CN=ECB2C46E-259A-4CE0-B1BC-24539A8ED7A7" Version="2.0.10.0" />
+  <mp:PhoneIdentity PhoneProductId="da1e712b-a49b-44f9-a479-9cef7c41b8b2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>OptiSearch</DisplayName>
+    <PublisherDisplayName>Aalok Singh</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="OptiSearch.App">
+      <uap:VisualElements DisplayName="OptiSearch" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets/Square44x44Logo.png" Description="Search for specific words in images,  just like 'Find in Page' in browsers. OptiSearch is useful when you wish to locate a specific word inside a whole lot of text, like finding a topic in the Index page of a book. Currently supported langauge : English" BackgroundColor="white">
+        <uap:DefaultTile ShortName="OptiSearch">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="white" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <uap:Capability Name="picturesLibrary" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
+  </Capabilities>
+</Package>

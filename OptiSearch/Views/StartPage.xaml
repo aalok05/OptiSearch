@@ -1,0 +1,296 @@
+﻿<Page x:Name="page"
+    x:Class="OptiSearch.Views.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:OptiSearch.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" RenderTransformOrigin="0.5,0.5">
+    <Page.Resources>
+        <Storyboard x:Name="OnNavStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="symbolIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="symbolIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="fontIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="fontIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="textBlock1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="SettingStoryboard">
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="settingsGrid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="500"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseIn" Exponent="-5"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="settingsGrid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="settingsClosedStoryboard">
+            <DoubleAnimation Duration="0:0:0.2" To="500" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="settingsGrid" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn" Exponent="5"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="settingsGrid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseIn" Exponent="5"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="settingsGrid">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+       <vm:ComboBoxItemConvert x:Key="ComboBoxItemConvert" />
+        
+    </Page.Resources>
+    <Page.RenderTransform>
+        <CompositeTransform/>
+    </Page.RenderTransform>
+
+    <Page.DataContext>
+        <vm:StartPageViewModel x:Name="StartViewModel"/>
+    </Page.DataContext>
+
+    <Grid>
+        <Frame Name="secFrame"
+               Margin="0">
+            <Grid Name="MainGrid">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#2a225c" Offset="0"/>
+                        <GradientStop Color="#911491" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.23*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <RelativePanel Grid.Row="0"
+                               Name="Title"
+                               VerticalAlignment="Stretch"
+                               Opacity="0.9"                
+                               Background="#535254"
+                               HorizontalAlignment="Stretch"
+                               >
+                    <Image 
+                        Name="AppIcon"
+                        VerticalAlignment="Center"
+                        Width="60"
+                        Height="60"
+                        Source="/Assets/Images/Purple_icon.png"/>
+                    <TextBlock Text="OptiSearch"
+                               Name="TitleText"
+                               FontSize="20"
+                               Foreground="White"
+                               FontFamily="Comic Sans MS"
+                               RelativePanel.AlignVerticalCenterWith="AppIcon"
+                               VerticalAlignment="Center"
+                               RelativePanel.RightOf="AppIcon"/>
+                </RelativePanel>
+
+                <StackPanel 
+                    Grid.Row="1"
+                    VerticalAlignment="Center"
+                    PointerPressed="StackPanel_PointerPressed"
+                    PointerReleased="StackPanel_PointerReleased"
+                    Tapped="CameraButton_Click"
+                    Orientation="Vertical" 
+                            Opacity="0.6">
+                    <Viewbox 
+                      
+                        MaxHeight="50" MaxWidth="50">
+                        <SymbolIcon x:Name="symbolIcon" 
+                                    Symbol="Camera" 
+                                    Foreground="Black"
+                                    RenderTransformOrigin="0.5,0.5">
+                            <SymbolIcon.RenderTransform>
+                                <CompositeTransform/>
+                            </SymbolIcon.RenderTransform>
+                        </SymbolIcon>
+                    </Viewbox>
+                    <TextBlock x:Name="textBlock" Text="Take a photo"
+                               FontSize="20"
+                               Foreground="DarkGray"
+                               HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <CompositeTransform/>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel 
+                    Grid.Row="2" 
+                      VerticalAlignment="Center"
+                    Tapped="LibraryButton_Click"
+                    PointerReleased="StackPanel_PointerReleased"
+                     PointerPressed="StackPanel_PointerPressed"
+                      PointerExited="StackPanel_PointerReleased"
+                    Orientation="Vertical" 
+                            Opacity="0.6">
+                    <Viewbox MaxHeight="50" MaxWidth="50">
+                        <FontIcon x:Name="fontIcon"
+                                   Foreground="Black"
+                                  Glyph="&#xEB9F;" 
+                                  RenderTransformOrigin="0.5,0.5">
+                            <FontIcon.RenderTransform>
+                                <CompositeTransform/>
+                            </FontIcon.RenderTransform>
+                        </FontIcon>
+
+                    </Viewbox>
+                    <TextBlock x:Name="textBlock1" Text="Choose from library"
+                               FontSize="20"
+                               Foreground="DarkGray"
+                               HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <CompositeTransform/>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </StackPanel>
+                <CommandBar Grid.Row="3"
+                            Height="37"
+                            Background="#535254">
+                    <CommandBar.SecondaryCommands>
+                        <AppBarButton Label="About" Tapped="About_Tapped"/>
+                        <AppBarButton Label="Settings" Tapped="Settings_Tapped"/>
+                    </CommandBar.SecondaryCommands>
+
+                </CommandBar>
+
+            </Grid>
+        </Frame>
+
+        <Grid   Name="settingsGrid"
+                Visibility="Collapsed"
+                Opacity="0.1"
+                Background="Black" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <CompositeTransform/>
+            </Grid.RenderTransform>
+            <Grid.Projection>
+                <PlaneProjection/>
+            </Grid.Projection>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                   Padding="10"
+                   FontSize="22"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Foreground="White"
+                   Text="SETTINGS"/>
+            <Button Grid.Row="2"
+                    FontSize="12"
+                    HorizontalAlignment="Center"
+                    Content="Learn more">
+                <Button.Flyout>
+                    <Flyout Placement="Top">
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="13">
+                            There are 25 supported languages.<LineBreak></LineBreak>
+                            &#x2022; Czech <LineBreak></LineBreak> &#x2022; Danish <LineBreak></LineBreak>  &#x2022;Dutch <LineBreak></LineBreak> &#x2022; English<LineBreak></LineBreak> &#x2022; Finnish<LineBreak></LineBreak> &#x2022; French<LineBreak></LineBreak> &#x2022; German<LineBreak></LineBreak> &#x2022; Hungarian<LineBreak></LineBreak>&#x2022; Italian<LineBreak></LineBreak> &#x2022; Norwegian<LineBreak></LineBreak> &#x2022; Polish<LineBreak></LineBreak> &#x2022; Portuguese<LineBreak></LineBreak>&#x2022; Romanian<LineBreak></LineBreak> &#x2022; Serbian Cyrillic<LineBreak></LineBreak>&#x2022; Serbian Latin<LineBreak></LineBreak> &#x2022; Slovak<LineBreak></LineBreak>&#x2022; Spanish <LineBreak></LineBreak>&#x2022; Swedish<LineBreak></LineBreak>
+                            &#x2022; Chinese Simplified<LineBreak></LineBreak>&#x2022; Greek<LineBreak></LineBreak>&#x2022; Japanese<LineBreak></LineBreak>&#x2022; Russian<LineBreak></LineBreak>&#x2022; Turkish<LineBreak></LineBreak>
+                            &#x2022; Chinese Traditional <LineBreak></LineBreak>&#x2022; Korean<LineBreak></LineBreak>
+
+                       <Bold> Only languages installed on the device can be used.</Bold>
+                        </TextBlock>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+            <ComboBox Name="languageComboBox"
+                      Grid.Row="1"
+                      Header="Installed language"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      DisplayMemberPath="ComboBoxHumanReadableOption"
+                      ItemsSource="{x:Bind  StartViewModel.ComboBoxOptions}"
+                      SelectedItem="{x:Bind StartViewModel.SelectedComboBoxOption, Mode=TwoWay, Converter={StaticResource ComboBoxItemConvert}}"
+                      SelectedValuePath="ComboBoxOption" />
+
+        </Grid>
+    </Grid>
+</Page>
